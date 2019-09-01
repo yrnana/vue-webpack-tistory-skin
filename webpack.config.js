@@ -38,9 +38,9 @@ module.exports = (env, argv) => {
 						{
 							loader: 'less-loader',
 							options: {
-								modifyvars: {
-									'@font-family': "'Noto Sans DemiLight', sans-serif",
-									'@select-item-selected-font-weight': 500,
+								modifyVars: {
+									'@font-family': "'Noto Sans KR', sans-serif",
+									// '@code-family': "'Noto Sans KR', sans-serif",
 								},
 								javascriptEnabled: true,
 							},
