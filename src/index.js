@@ -7,4 +7,12 @@ Vue.config.ignoredElements = [/^s_/]
 
 new Vue({
 	el: '#app',
+	methods: {
+		onCollapse(collapsed, type) {
+			console.log(collapsed, type)
+		},
+		onBreakpoint(broken) {
+			console.log(broken)
+		},
+	},
 })

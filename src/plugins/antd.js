@@ -27,7 +27,7 @@ import {
 	List,
 	// LocaleProvider,
 	message,
-	// Menu,
+	Menu,
 	// Modal,
 	notification,
 	// Pagination,
@@ -95,7 +95,7 @@ Vue.use(Input)
 Vue.use(Layout)
 Vue.use(List)
 // Vue.use(LocaleProvider)
-// Vue.use(Menu)
+Vue.use(Menu)
 // Vue.use(Modal)
 // Vue.use(Pagination)
 // Vue.use(Popconfirm)
