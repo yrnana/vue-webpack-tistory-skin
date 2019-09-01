@@ -1,0 +1,43 @@
+{
+	"name": "tistory",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "webpack-dev-server --mode development",
+		"clean": "shx rm -rf dist",
+		"prebuild": "yarn clean",
+		"build": "webpack --mode production",
+		"postbuild": "shx cp src/index.xml dist/index.xml && shx cp src/preview.gif dist/preview.gif",
+		"serve": "serve dist"
+	},
+	"dependencies": {
+		"ant-design-vue": "^1.3.16",
+		"vue": "^2.6.10"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/plugin-transform-runtime": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@babel/runtime": "^7.5.5",
+		"@babel/runtime-corejs2": "^7.5.5",
+		"babel-eslint": "^10.0.3",
+		"babel-loader": "^8.0.6",
+		"babel-plugin-import": "^1.12.1",
+		"css-loader": "^3.2.0",
+		"eslint": "^6.3.0",
+		"eslint-config-prettier": "^6.1.0",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^4.0.0-beta.8",
+		"less": "^3.10.3",
+		"less-loader": "^5.0.0",
+		"mini-css-extract-plugin": "^0.8.0",
+		"node-sass": "^4.12.0",
+		"sass-loader": "7",
+		"shx": "^0.3.2",
+		"style-loader": "^1.0.0",
+		"webpack": "^4.39.3",
+		"webpack-cli": "^3.3.7",
+		"webpack-dev-server": "^3.8.0"
+	}
+}

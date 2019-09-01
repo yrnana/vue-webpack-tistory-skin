@@ -1,0 +1,15 @@
+{
+	"parser": "babel-eslint",
+	"rules": {
+		"no-unused-vars": "warn",
+		"no-console": "off"
+	},
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"amd": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended", "prettier"]
+}

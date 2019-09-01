@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>developer 스킨</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[웹표준을 준수한 XHTML 기반의 Tistory 스킨입니다.]]>
+		</description>
+		<license>
+			<![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
+		</license>
+	</information>
+	<author>
+		<name>Nana</name>
+		<homepage>http://studyweb.tistory.com</homepage>
+		<email>nyryn0945@gmail.com</email>
+	</author>
+	<default>
+		<recentEntries>5</recentEntries>
+		<recentComments>5</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>20</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>0</expandTrackback>
+		<lengthOfRecentNotice>40</lengthOfRecentNotice>
+		<lengthOfRecentEntry>30</lengthOfRecentEntry>
+		<lengthOfRecentComment>40</lengthOfRecentComment>
+		<lengthOfRecentTrackback>40</lengthOfRecentTrackback>
+		<lengthOfLink>40</lengthOfLink>
+		<entriesOnList>10</entriesOnList>
+		<showListOnCategory>1</showListOnCategory>
+		<commentMessage>
+			<none>0</none>
+			<single>1</single>
+		</commentMessage>
+		<trackbackMessage>
+			<none>0</none>
+			<single>1</single>
+		</trackbackMessage>
+		<contentWidth>725</contentWidth>
+	</default>
+	<cover>
+		<item>
+			<name>featured</name>
+			<label><![CDATA[ 대표글 ]]></label>
+			<description><![CDATA[ 대표글을 표시합니다. ]]></description>
+		</item>
+		<item>
+			<name>thumbnail-list</name>
+			<label><![CDATA[ 섬네일 리스트 ]]></label>
+			<description><![CDATA[ 섬네일을 포함한 목록을 표시합니다. ]]></description>
+		</item>
+	</cover>
+</skin>
