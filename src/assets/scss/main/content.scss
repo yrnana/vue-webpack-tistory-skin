@@ -1,0 +1,12 @@
+#content {
+	margin: 0 auto;
+	max-width: 100%;
+	min-height: 360px;
+	transition: padding 0.2s;
+}
+.inner-content {
+	padding: $spacing;
+}
+.paging {
+	text-align: center;
+}

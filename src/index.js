@@ -7,12 +7,23 @@ Vue.config.ignoredElements = [/^s_/]
 
 new Vue({
 	el: '#app',
+	data() {
+		return {
+			open: window.innerWidth > 992,
+		}
+	},
 	methods: {
-		onCollapse(collapsed, type) {
-			console.log(collapsed, type)
+		toggleOpen() {
+			this.open = !this.open
 		},
-		onBreakpoint(broken) {
-			console.log(broken)
+		onSearch(value, event) {
+			if (value === '') {
+				alert('검색어를 입력하세요')
+				event.target.focus()
+				return
+			}
+			// eslint-disable-next-line no-undef
+			window.location.href = '/search/' + looseURIEncode(value)
 		},
 	},
 })

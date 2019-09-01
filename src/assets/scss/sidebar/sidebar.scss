@@ -1,0 +1,100 @@
+#aside {
+	position: absolute;
+	top: 0;
+	left: -$sidebar-width;
+	bottom: 0;
+	z-index: 1;
+	overflow-y: auto;
+	width: $sidebar-width;
+	padding: $spacing;
+	color: #364149;
+	background: #ffffff;
+	border-right: $border;
+	-webkit-transition: left 0.2s;
+	-moz-transition: left 0.2s;
+	-o-transition: left 0.2s;
+	transition: left 0.2s;
+
+	.blogInfo {
+		margin-bottom: $spacing * 2;
+		h1 {
+			margin-bottom: 0;
+			font-size: 2rem;
+			font-weight: 700;
+			a {
+				color: #333;
+			}
+		}
+		.blogDesc {
+			font-size: 1rem;
+			color: #666;
+		}
+	}
+
+	.sidebarElement {
+		margin-bottom: $spacing * 1.5;
+		h3 {
+			font-size: 1.1rem;
+		}
+		ul {
+			font-size: 0.95rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			ul ul {
+				margin-left: $spacing;
+			}
+			a {
+				display: inline-block;
+				color: #666;
+				margin: 2px 0;
+				&:hover {
+					color: #aaa;
+				}
+				// img {
+				// 	display: none;
+				// 	&.active {
+				// 		display: inline-block;
+				// 	}
+				// }
+			}
+		}
+	}
+
+	.tagbox {
+		a {
+			display: inline-block;
+		}
+		& > div {
+			margin-bottom: -8px;
+		}
+		.ant-tag {
+			margin-bottom: 8px;
+		}
+		.cloud1 .ant-tag {
+			color: #eb2f96;
+			background: #fff0f6;
+			border-color: #ffadd2;
+		}
+		.cloud2 .ant-tag {
+			color: #fa8c16;
+			background: #fff7e6;
+			border-color: #ffd591;
+		}
+		.cloud3 .ant-tag {
+			color: #52c41a;
+			background: #f6ffed;
+			border-color: #b7eb8f;
+		}
+		.cloud4 .ant-tag {
+			color: #1890ff;
+			background: #e6f7ff;
+			border-color: #91d5ff;
+		}
+		.cloud5 .ant-tag {
+			color: #722ed1;
+			background: #f9f0ff;
+			border-color: #d3adf7;
+		}
+	}
+}

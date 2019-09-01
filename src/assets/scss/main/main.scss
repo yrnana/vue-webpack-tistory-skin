@@ -1,0 +1,16 @@
+#main {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	overflow-y: auto;
+	color: #000;
+	background: #f1f1f1;
+	-webkit-transition: left 0.2s;
+	-moz-transition: left 0.2s;
+	-o-transition: left 0.2s;
+	transition: left 0.2s;
+}
+
+@import './content.scss';

@@ -1,28 +1,32 @@
-// font
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,500&display=swap&subset=korean');
-@font-face {
-	font-family: 'Noto Sans KR';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Noto Sans KR DemiLight'), local('NotoSansKR-DemiLight'),
-		url(//t1.daumcdn.net/tistory_admin/static/manage/font/NotoSansCJKkr-DemiLight.woff) format('woff');
-}
-
-// tistory 설정
-h1 {
-	font-size: 2em;
-}
-h2 {
-	font-size: 1.87em;
-}
-h3 {
-	font-size: 1.62em;
-}
-h4 {
-	font-size: 1.37em;
-}
+@import './font.scss';
+@import './tistory.scss';
+@import './variables.scss';
 
 // app 기본 설정
 [v-cloak] {
 	display: none;
 }
+
+// 그 외 설정
+#app {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	&.active {
+		#aside {
+			left: 0;
+		}
+	}
+}
+
+@import './sidebar/sidebar.scss';
+@import './main/main.scss';
+
+#footer {
+	text-align: center;
+	padding: $spacing;
+	color: rgba(0, 0, 0, 0.65);
+	font-size: 14px;
+}
+
+@import './mediaquery.scss';

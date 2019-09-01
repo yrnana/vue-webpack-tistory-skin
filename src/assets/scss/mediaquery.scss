@@ -1,0 +1,51 @@
+@media (min-width: $lg) {
+	#content {
+		width: 820px;
+		padding: $spacing $spacing 0 $spacing;
+	}
+	.inner-content {
+		border: $border;
+		background: #fff;
+	}
+}
+
+@media (max-width: $lg) {
+	#main {
+		background: #fff;
+	}
+}
+
+@media (min-width: $md) {
+	#app.active {
+		#aside {
+			left: 0;
+		}
+		#main {
+			left: $sidebar-width;
+		}
+	}
+}
+
+@media (max-width: $md) {
+	#aside {
+		width: $sidebar-width;
+		bottom: 0;
+		left: -100%;
+	}
+	#main {
+		-webkit-transition: -webkit-transform 0.2s;
+		-moz-transition: -moz-transform 0.2s;
+		-o-transition: -o-transform 0.2s;
+		transition: transform 0.2s;
+	}
+	#app.active {
+		overflow: hidden;
+		#main {
+			-webkit-transform: translate($sidebar-width, 0);
+			-moz-transform: translate($sidebar-width, 0);
+			-ms-transform: translate($sidebar-width, 0);
+			-o-transform: translate($sidebar-width, 0);
+			transform: translate($sidebar-width, 0);
+		}
+	}
+}

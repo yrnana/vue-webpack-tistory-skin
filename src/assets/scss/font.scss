@@ -1,0 +1,13 @@
+// font
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,500,700&display=swap&subset=korean');
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans KR DemiLight'), local('NotoSansKR-DemiLight'),
+		url(//t1.daumcdn.net/tistory_admin/static/manage/font/NotoSansCJKkr-DemiLight.woff) format('woff');
+}
+
+html {
+	font-size: 14px;
+}
