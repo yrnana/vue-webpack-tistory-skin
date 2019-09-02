@@ -1,0 +1,22 @@
+.categoryList {
+	h2 {
+		font-size: 1.3rem;
+	}
+	.ant-list-item-content {
+		display: flex;
+		align-items: center;
+		a {
+			flex-grow: 1;
+			@include black-a;
+		}
+		.cnt {
+			color: #999;
+			font-size: 0.85em;
+			margin-left: 2px;
+		}
+		.date {
+			font-size: 0.85rem;
+			margin-left: 6px;
+		}
+	}
+}

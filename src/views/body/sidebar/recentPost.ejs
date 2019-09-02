@@ -1,0 +1,14 @@
+<div class="sidebarElement recentPost">
+	<h3>RECENT POSTS</h3>
+	<ul class="list">
+		<% if (isProd) { %>
+		<s_rctps_rep>
+			<li>
+				<a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+			</li>
+		</s_rctps_rep>
+		<% } else { for (var i = 1; i <= 3; i++) { %>
+		<li><a href="#">최신글 <%= i %></a></li>
+		<% } } %>
+	</ul>
+</div>

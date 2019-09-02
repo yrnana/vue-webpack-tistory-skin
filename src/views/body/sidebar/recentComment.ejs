@@ -1,0 +1,14 @@
+<div class="sidebarElement recentComment">
+	<h3>RECENT COMMENTS</h3>
+	<ul class="list">
+		<% if (isProd) { %>
+		<s_rctrp_rep>
+			<li>
+				<a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a>
+			</li>
+		</s_rctrp_rep>
+		<% } else { for (var i = 1; i <= 3; i++) { %>
+		<li><a href="#">최신댓글 <%= i %></a></li>
+		<% } } %>
+	</ul>
+</div>

@@ -19,15 +19,11 @@ module.exports = (env, argv) => {
 					use: 'babel-loader',
 				},
 				{
-					test: /\.html$/,
-					use: 'html-loader',
-				},
-				{
 					test: /\.css$/,
 					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
 				},
 				{
-					test: /\.s[ac]ss$/i,
+					test: /\.s[ac]ss$/,
 					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
 				},
 				{
@@ -47,6 +43,7 @@ module.exports = (env, argv) => {
 						},
 					],
 				},
+				{ test: /\.ejs$/, use: 'ejs-compiled-loader' },
 			],
 		},
 		resolve: {
@@ -56,10 +53,11 @@ module.exports = (env, argv) => {
 		},
 		plugins: [
 			new HtmlWebPackPlugin({
-				template: 'src/index.ejs',
+				template: 'src/views/index.ejs',
 				filename: 'skin.html',
 				minify: false,
 				inject: false,
+				isProd: !isDev,
 			}),
 		],
 		optimization: {
@@ -81,7 +79,7 @@ module.exports = (env, argv) => {
 			open: true,
 			hot: true,
 			before(app, server) {
-				server._watch('src/*.ejs')
+				server._watch('src/**/*.ejs')
 			},
 		}
 		config.plugins.push(new webpack.HotModuleReplacementPlugin())

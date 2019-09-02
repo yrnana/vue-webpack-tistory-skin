@@ -1,0 +1,49 @@
+<nav class="sidebarElement categoryMenu">
+	<h3>CATEGORIES</h3>
+	<% if (isProd) { %> [##_category_list_##] <% } else { %>
+	<ul class="tt_category">
+		<li>
+			<a href="#" class="link_tit">
+				분류 전체보기 <span class="c_cnt">(3)</span>
+				<img
+					src="https://t1.daumcdn.net/tistory_admin/assets/blog/99232e5c00471183ed0209c5c35192df1699a29a/blogs/image/category/new_ico_5.gif"
+					alt="N"
+					style="vertical-align: middle; padding-left: 2px;"
+				/>
+			</a>
+			<ul class="category_list">
+				<li>
+					<a href="#" class="link_item">
+						카테고리1 <span class="c_cnt">(3)</span>
+						<img
+							src="https://t1.daumcdn.net/tistory_admin/assets/blog/99232e5c00471183ed0209c5c35192df1699a29a/blogs/image/category/new_ico_5.gif"
+							alt="N"
+							style="vertical-align: middle; padding-left: 2px;"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="link_item"> 카테고리2 <span class="c_cnt">(0)</span></a>
+					<ul class="sub_category_list">
+						<li>
+							<a href="#" class="link_sub_item">
+								카테고리2-1
+								<span class="c_cnt">(0)</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="link_sub_item">
+								카테고리2-2
+								<span class="c_cnt">(0)</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="link_item"> 카테고리3 <span class="c_cnt">(0)</span></a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<% } %>
+</nav>

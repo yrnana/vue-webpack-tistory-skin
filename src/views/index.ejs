@@ -1,0 +1,28 @@
+<% var isProd = htmlWebpackPlugin.options.isProd %>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<%- include src/views/head.ejs %>
+	</head>
+	<body id="[##_body_id_##]">
+		<s_t3>
+			<div id="app" :class="{ active: open }" v-cloak>
+				<!-- 사이드바 & 헤더 -->
+				<aside id="aside">
+					<%- include src/views/body/sidebar.ejs %>
+				</aside>
+
+				<main id="main">
+					<!-- 본문 -->
+					<section id="content">
+						<%- include src/views/body/content.ejs %>
+					</section>
+
+					<!-- footer -->
+					<footer id="footer">Copyright &copy; Nana</footer>
+				</main>
+			</div>
+			<%- htmlWebpackPlugin.tags.bodyTags %>
+		</s_t3>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<s_cover_group>
+	<s_cover_rep>
+		<s_cover name="featured">
+			<div class="featured">
+				<% if (isProd) { %>
+				<s_cover_item>
+					<a-card hoverable>
+						<s_cover_item_thumbnail>
+							<img slot="cover" src="[##_cover_item_thumbnail_##]" />
+						</s_cover_item_thumbnail>
+						<a-card-meta title="[##_cover_item_title_##]">
+							<template slot="description">
+								<p>[##_cover_item_summary_##]</p>
+								<a href="[##_cover_item_url_##]" class="ant-btn ant-btn-default">
+									<span>자세히 보기</span>
+								</a>
+							</template>
+						</a-card-meta>
+					</a-card>
+				</s_cover_item>
+				<% } else { %>
+				<a-card hoverable>
+					<img slot="cover" src="https://k.kakaocdn.net/dn/dnXuvs/btqxVdOPANu/ThvoDUK2JaTNgqcnvnKWK1/img.jpg" />
+					<a-card-meta title="소학교 별 다 거외다">
+						<template slot="description">
+							<p>
+								별 다 슬퍼하는 아스라히 때 하나에 같이 나는 까닭입니다. 그리워 시인의 책상을 계절이 아이들의 까닭입니다. 이런 아무
+								계집애들의 아침이 불러 이름을 있습니다. 소학교 별 다 거외다. 밤이 이 나는 위에도 풀이 피어나듯이 릴케 딴은 듯합니다.
+								아무 토끼, 위에도 아이들의 있습니다. 하나 헤는 아직 비둘기, 나는 이름과, 있습니다. 이웃 이름을 이제 노루, 이름을
+								버리었습니다. 시와 지나고 다 했던 묻힌 하나에 하나에..
+							</p>
+							<a href="#" class="ant-btn ant-btn-default">
+								<span>자세히 보기</span>
+							</a>
+						</template>
+					</a-card-meta>
+				</a-card>
+				<% } %>
+			</div>
+		</s_cover>
+		<s_cover name="thumbnail-list">
+			<div class="thumbnail-list">
+				<h3>[##_cover_title_##]</h3>
+				<div class="row">
+					<% if (isProd) { %>
+					<s_cover_item>
+						<a href="[##_cover_item_url_##]" class="col-xs col-sm col-md col-lg col-xl">
+							<a-card hoverable>
+								<s_cover_item_thumbnail>
+									<img slot="cover" src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_cover_item_thumbnail_##]" />
+								</s_cover_item_thumbnail>
+								<a-card-meta title="[##_cover_item_title_##]">
+									<s_cover_item_article_info>
+										<template slot="description">
+											[##_cover_item_category_##] · [##_cover_item_simple_date_##]
+										</template>
+									</s_cover_item_article_info>
+								</a-card-meta>
+							</a-card>
+						</a>
+					</s_cover_item>
+					<% } else { %>
+					<a href="#" v-for="n in 3" class="col-xs col-sm col-md col-lg col-xl">
+						<a-card hoverable>
+							<img
+								v-if="n % 3 === 1"
+								slot="cover"
+								src="//i1.daumcdn.net/thumb/C264x200/?fname=https://k.kakaocdn.net/dn/dnXuvs/btqxVdOPANu/ThvoDUK2JaTNgqcnvnKWK1/img.jpg"
+							/>
+							<a-card-meta title="소학교 별 다 거외다">
+								<template slot="description">
+									카테고리1 · 2019.09.01
+								</template>
+							</a-card-meta>
+						</a-card>
+					</a>
+					<% } %>
+				</div>
+			</div>
+		</s_cover>
+	</s_cover_rep>
+</s_cover_group>
