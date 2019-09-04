@@ -1,16 +1,13 @@
 #main {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	overflow-y: auto;
-	color: #000;
-	background: $background;
-	-webkit-transition: left 0.2s;
-	-moz-transition: left 0.2s;
-	-o-transition: left 0.2s;
-	transition: left 0.2s;
+	background: #f1f1f1;
+	min-height: 100vh;
+	transform: translateX(0);
+	padding: $spacing;
+	-webkit-transition: transform 0.3s;
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	transition: transform 0.3s;
 }
 
 @import './content.scss';

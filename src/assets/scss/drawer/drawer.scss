@@ -1,19 +1,19 @@
-#aside {
-	position: absolute;
-	top: 0;
-	left: -$sidebar-width;
-	bottom: 0;
+#drawer {
+	height: 100%;
+	width: $drawer;
+	position: fixed;
 	z-index: 1;
-	overflow-y: auto;
-	width: $sidebar-width;
-	padding: $spacing;
-	color: #364149;
-	background: #ffffff;
+	top: 0;
+	left: -$drawer;
+	background: #fff;
+	overflow-x: hidden;
+	padding: 20px;
 	border-right: $border;
-	-webkit-transition: left 0.2s;
-	-moz-transition: left 0.2s;
-	-o-transition: left 0.2s;
-	transition: left 0.2s;
+	-webkit-transition: left 0.3s;
+	-moz-transition: left 0.3s;
+	-ms-transition: left 0.3s;
+	-o-transition: left 0.3s;
+	transition: left 0.3s;
 
 	.blogInfo {
 		margin-bottom: $spacing * 2;

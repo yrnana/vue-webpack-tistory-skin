@@ -9,7 +9,7 @@ new Vue({
 	el: '#app',
 	data() {
 		return {
-			open: window.innerWidth > 992,
+			open: window.matchMedia('(min-width: 992px)').matches,
 		}
 	},
 	methods: {
