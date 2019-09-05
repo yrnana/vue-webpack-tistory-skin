@@ -22,7 +22,7 @@
 			font-size: 2rem;
 			font-weight: 700;
 			a {
-				color: $font-color;
+				color: $head-text-color;
 			}
 		}
 		.blogDesc {
@@ -66,7 +66,7 @@
 				color: #555;
 				margin-bottom: 2px;
 				&:hover {
-					color: #aaa;
+					color: #999;
 				}
 				// img {
 				// 	display: none;

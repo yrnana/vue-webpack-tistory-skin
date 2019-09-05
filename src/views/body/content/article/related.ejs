@@ -1,0 +1,33 @@
+<s_article_related>
+	<div class="related">
+		<% if (isProd) { %>
+		<h3>관련글</h3>
+		<a-row :gutter="8" type="flex">
+			<s_article_related_rep>
+				<a-col class="[##_article_related_rep_type_##]" :xs="12" :sm="8" :md="6">
+					<a href="[##_article_related_rep_link_##]" class="link" <s_article_related_rep_thumbnail>style="background-image:url('[##_article_related_rep_thumbnail_link_##]') !important"</s_article_related_rep_thumbnail>>
+						<span class="bg"></span>
+						<span class="txt">[##_article_related_rep_title_##]</span>
+					</a>
+				</a-col>
+			</s_article_related_rep>
+		</a-row>
+		<% } else { %>
+		<h3>관련글</h3>
+		<a-row :gutter="8" type="flex">
+			<a-col class="thumb_type" :xs="12" :sm="8" :md="6" v-for="n in 2">
+				<a href="#" class="link" style="background-image: url('https://k.kakaocdn.net/dn/dnXuvs/btqxVdOPANu/ThvoDUK2JaTNgqcnvnKWK1/img.jpg') !important;">
+					<span class="bg"></span>
+					<span class="txt">소학교 별 다 거외다</span>
+				</a>
+			</a-col>
+			<a-col class="text_type" :xs="12" :sm="8" :md="6" v-for="n in 2">
+				<a href="#" class="link">
+					<span class="bg"></span>
+					<span class="txt">끓는 만물은 피어나기 그들에게</span>
+				</a>
+			</a-col>
+		</a-row>
+		<% } %>
+	</div>
+</s_article_related>

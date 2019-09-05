@@ -1,7 +1,7 @@
 <s_list>
 	<div class="inner-content categoryList">
-		<h2>[##_list_conform_##]</h2>
-		<a-list item-layout="horizontal">
+		<h2>[##_list_conform_##]<span>([##_list_count_##])</span></h2>
+		<a-list item-layout="horizontal" :locale="{ emptyText: '글이 없습니다' }">
 			<% if (isProd) { %>
 			<s_list_rep>
 				<a-list-item>

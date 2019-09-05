@@ -9,9 +9,11 @@ $border: 1px solid $border-color;
 $drawer: 300px;
 $spacing: 24px;
 $background: #f1f1f1;
-$font-color: #333;
+$text-color: #333;
+$head-text-color: #0d1a26;
+$blue: #1890ff;
 @mixin black-a {
-	color: $font-color;
+	color: $text-color;
 	&:hover {
 		color: #999;
 	}

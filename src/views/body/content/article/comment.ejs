@@ -1,0 +1,92 @@
+<div class="comments">
+	<s_rp>
+		<s_rp_input_form>
+			<div class="commentWrite">
+				<s_rp_member>
+					<s_rp_guest>
+						<p>
+							<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
+							<label for="name"> : 이름 </label>
+						</p>
+						<p>
+							<input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />블로그 관리자일
+							경우 password field에 미리 비밀번호를 넣어놓기 위해 만들어 놓았던 치환자였으나, 지금은 사용되지 않음.. (현재는 블로그
+							관리자일 경우 password field가 나타나지 않음.)
+							<label for="password"> : 패스워드 </label>
+						</p>
+						<p>
+							<input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" />
+							<label for="homepage"> : 홈페이지 </label>
+						</p>
+					</s_rp_guest>
+					<p class="secretWrap">
+						<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" />
+						<label for="secret"> 비밀글 </label>
+					</p>
+				</s_rp_member>
+				<p>
+					<textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea>
+				</p>
+				<p>
+					<input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
+				</p>
+			</div>
+		</s_rp_input_form>
+		<s_rp_container>
+			<div class="commentList">
+				<ol>
+					<s_rp_rep>
+						<li id="[##_rp_rep_id_##]">
+							<div class="[##_rp_rep_class_##]">
+								<span class="image">[##_rp_rep_logo_##]</span>
+								<span class="name">[##_rp_rep_name_##]</span>
+								<span class="date"> [##_rp_rep_date_##]</span>
+								<span class="control">
+									<a href="[##_rp_rep_link_##]" class="address"
+										>&nbsp;
+										<span>댓글주소</span>
+									</a>
+									<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"
+										>&nbsp;
+										<span>수정/삭제</span>
+									</a>
+									<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write"
+										>&nbsp;
+										<span>댓글쓰기</span>
+									</a>
+								</span>
+								<p>[##_rp_rep_desc_##]</p>
+							</div>
+							<s_rp2_container>
+								<ul>
+									<s_rp2_rep>
+										<li id="[##_rp_rep_id_##]">
+											<div class="[##_rp_rep_class_##]">
+												<span class="image">[##_rp_rep_logo_##]</span>
+												<span class="name">[##_rp_rep_name_##]</span>
+												<span class="date"> [##_rp_rep_date_##]</span>
+												<span class="control">
+													<a href="[##_rp_rep_link_##]" class="address"
+														>&nbsp;
+														<span>댓글주소</span>
+													</a>
+													<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"
+														>&nbsp;
+														<span>수정/삭제</span>
+													</a>
+												</span>
+												<p>
+													[##_rp_rep_desc_##]
+												</p>
+											</div>
+										</li>
+									</s_rp2_rep>
+								</ul>
+							</s_rp2_container>
+						</li>
+					</s_rp_rep>
+				</ol>
+			</div>
+		</s_rp_container>
+	</s_rp>
+</div>

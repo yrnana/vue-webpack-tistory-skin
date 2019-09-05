@@ -1,7 +1,7 @@
 #content {
 	margin: 0 auto;
 	max-width: 100%;
-	min-height: 360px;
+	min-height: 300px;
 	-webkit-transition: padding 0.3s;
 	-moz-transition: padding 0.3s;
 	-ms-transition: padding 0.3s;
@@ -11,9 +11,8 @@
 .inner-content {
 	padding: $spacing;
 }
-.paging {
-	text-align: center;
-}
 
 @import './content/cover.scss';
 @import './content/list.scss';
+@import './content/paging.scss';
+@import './content/article.scss';

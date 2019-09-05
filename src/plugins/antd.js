@@ -17,7 +17,7 @@ import {
 	// Checkbox,
 	Col,
 	// DatePicker,
-	// Divider,
+	Divider,
 	// Dropdown,
 	Form,
 	Icon,
@@ -85,7 +85,7 @@ Vue.use(Card)
 // Vue.use(Checkbox)
 Vue.use(Col)
 // Vue.use(DatePicker)
-// Vue.use(Divider)
+Vue.use(Divider)
 // Vue.use(Drawer)
 // Vue.use(Dropdown)
 Vue.use(Form)

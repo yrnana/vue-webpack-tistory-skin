@@ -36,6 +36,8 @@ module.exports = (env, argv) => {
 							options: {
 								modifyVars: {
 									'@font-family': "'Noto Sans KR', sans-serif",
+									'@heading-color': '#0d1a26',
+									'@text-color': '#333333',
 									// '@code-family': "'Noto Sans KR', sans-serif",
 								},
 								javascriptEnabled: true,

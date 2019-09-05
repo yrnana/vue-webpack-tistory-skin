@@ -1,0 +1,27 @@
+.paging {
+	text-align: center;
+	a {
+		@include black-a;
+		margin: 0 3px;
+		padding: 2px;
+	}
+	.prev {
+		&.no-more-prev {
+			color: #aaa;
+			cursor: default;
+		}
+	}
+	.next {
+		&.no-more-next {
+			color: #aaa;
+			cursor: default;
+		}
+	}
+	.numbox {
+		.selected {
+			color: $blue;
+			font-weight: 700;
+			cursor: default;
+		}
+	}
+}
