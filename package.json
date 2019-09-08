@@ -16,18 +16,18 @@
 		"vue": "^2.6.10"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.5.5",
-		"@babel/plugin-transform-runtime": "^7.5.5",
-		"@babel/preset-env": "^7.5.5",
-		"@babel/runtime": "^7.5.5",
-		"@babel/runtime-corejs2": "^7.5.5",
+		"@babel/core": "^7.6.0",
+		"@babel/plugin-transform-runtime": "^7.6.0",
+		"@babel/preset-env": "^7.6.0",
+		"@babel/runtime": "^7.6.0",
+		"@babel/runtime-corejs2": "^7.6.0",
 		"babel-eslint": "^10.0.3",
 		"babel-loader": "^8.0.6",
 		"babel-plugin-import": "^1.12.1",
 		"css-loader": "^3.2.0",
 		"ejs-compiled-loader": "^1.1.0",
 		"eslint": "^6.3.0",
-		"eslint-config-prettier": "^6.1.0",
+		"eslint-config-prettier": "^6.2.0",
 		"html-loader": "^0.5.5",
 		"html-webpack-plugin": "^4.0.0-beta.8",
 		"less": "^3.10.3",
@@ -38,7 +38,7 @@
 		"shx": "^0.3.2",
 		"style-loader": "^1.0.0",
 		"webpack": "^4.39.3",
-		"webpack-cli": "^3.3.7",
+		"webpack-cli": "^3.3.8",
 		"webpack-dev-server": "^3.8.0"
 	}
 }

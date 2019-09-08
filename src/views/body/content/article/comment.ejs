@@ -1,22 +1,19 @@
 <div class="comments">
+	<% if (isProd) { %>
 	<s_rp>
 		<s_rp_input_form>
 			<div class="commentWrite">
 				<s_rp_member>
 					<s_rp_guest>
 						<p>
-							<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
-							<label for="name"> : 이름 </label>
+							<a-input name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
+								<a-icon slot="prefix" type="user" />
+							</a-input>
 						</p>
 						<p>
-							<input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />블로그 관리자일
-							경우 password field에 미리 비밀번호를 넣어놓기 위해 만들어 놓았던 치환자였으나, 지금은 사용되지 않음.. (현재는 블로그
-							관리자일 경우 password field가 나타나지 않음.)
-							<label for="password"> : 패스워드 </label>
-						</p>
-						<p>
-							<input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" />
-							<label for="homepage"> : 홈페이지 </label>
+							<a-input type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
+								<a-icon slot="prefix" type="lock" />
+							</a-input>
 						</p>
 					</s_rp_guest>
 					<p class="secretWrap">
@@ -25,7 +22,7 @@
 					</p>
 				</s_rp_member>
 				<p>
-					<textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea>
+					<a-textarea name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }" />
 				</p>
 				<p>
 					<input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
@@ -89,4 +86,5 @@
 			</div>
 		</s_rp_container>
 	</s_rp>
+	<% } else { %> <% } %>
 </div>

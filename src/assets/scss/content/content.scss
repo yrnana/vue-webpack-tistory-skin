@@ -10,6 +10,7 @@
 }
 .inner-content {
 	padding: $spacing;
+	margin-bottom: $spacing;
 }
 
 @import './content/cover.scss';
