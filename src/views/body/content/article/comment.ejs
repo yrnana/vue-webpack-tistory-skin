@@ -3,30 +3,21 @@
 	<s_rp>
 		<s_rp_input_form>
 			<div class="commentWrite">
-				<s_rp_member>
-					<s_rp_guest>
-						<p>
-							<a-input name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
-								<a-icon slot="prefix" type="user" />
+				<div class="options">
+					<s_rp_member>
+						<s_rp_guest>
+							<a-input v-model="name" name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
+								<a-icon slot="prefix" type="user"></a-icon>
 							</a-input>
-						</p>
-						<p>
-							<a-input type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
-								<a-icon slot="prefix" type="lock" />
+							<a-input v-model="password" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
+								<a-icon slot="prefix" type="lock"></a-icon>
 							</a-input>
-						</p>
-					</s_rp_guest>
-					<p class="secretWrap">
-						<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" />
-						<label for="secret"> 비밀글 </label>
-					</p>
-				</s_rp_member>
-				<p>
-					<a-textarea name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }" />
-				</p>
-				<p>
-					<input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" />
-				</p>
+						</s_rp_guest>
+						<a-checkbox v-model="secret" name="[##_rp_input_is_secret_##]">비밀글</a-checkbox>
+					</s_rp_member>
+				</div>
+				<a-textarea v-model="comment" name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }"></a-textarea>
+				<a-button type="primary" html-type="submit" @click.prevent="addComment('[##_rp_onclick_submit_##]')" ref="addCmtBtn">등록</a-button>
 			</div>
 		</s_rp_input_form>
 		<s_rp_container>
@@ -35,46 +26,27 @@
 					<s_rp_rep>
 						<li id="[##_rp_rep_id_##]">
 							<div class="[##_rp_rep_class_##]">
-								<span class="image">[##_rp_rep_logo_##]</span>
-								<span class="name">[##_rp_rep_name_##]</span>
-								<span class="date"> [##_rp_rep_date_##]</span>
-								<span class="control">
-									<a href="[##_rp_rep_link_##]" class="address"
-										>&nbsp;
-										<span>댓글주소</span>
-									</a>
-									<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"
-										>&nbsp;
-										<span>수정/삭제</span>
-									</a>
-									<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write"
-										>&nbsp;
-										<span>댓글쓰기</span>
-									</a>
-								</span>
-								<p>[##_rp_rep_desc_##]</p>
+								<div class="header">
+									<span class="name">[##_rp_rep_name_##]</span>
+									<span class="date"> [##_rp_rep_date_##]</span>
+									<span class="spacer"></span>
+									<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">수정/삭제</a>
+									<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">댓글쓰기</a>
+								</div>
+								<p class="content">[##_rp_rep_desc_##]</p>
 							</div>
 							<s_rp2_container>
 								<ul>
 									<s_rp2_rep>
 										<li id="[##_rp_rep_id_##]">
 											<div class="[##_rp_rep_class_##]">
-												<span class="image">[##_rp_rep_logo_##]</span>
-												<span class="name">[##_rp_rep_name_##]</span>
-												<span class="date"> [##_rp_rep_date_##]</span>
-												<span class="control">
-													<a href="[##_rp_rep_link_##]" class="address"
-														>&nbsp;
-														<span>댓글주소</span>
-													</a>
-													<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"
-														>&nbsp;
-														<span>수정/삭제</span>
-													</a>
-												</span>
-												<p>
-													[##_rp_rep_desc_##]
-												</p>
+												<div class="header">
+													<span class="name">[##_rp_rep_name_##]</span>
+													<span class="date"> [##_rp_rep_date_##]</span>
+													<span class="spacer"></span>
+													<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">수정/삭제</a>
+												</div>
+												<p class="content">[##_rp_rep_desc_##]</p>
 											</div>
 										</li>
 									</s_rp2_rep>
@@ -86,5 +58,138 @@
 			</div>
 		</s_rp_container>
 	</s_rp>
-	<% } else { %> <% } %>
+	<% } else { %>
+	<div id="entry3Comment" style="display: block;">
+		<form style="margin: 0px;">
+			<div class="commentWrite">
+				<div class="options">
+					<a-input v-model="name" name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
+						<a-icon slot="prefix" type="user"></a-icon>
+					</a-input>
+					<a-input v-model="password" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
+						<a-icon slot="prefix" type="lock"></a-icon>
+					</a-input>
+					<a-checkbox v-model="secret" name="[##_rp_input_is_secret_##]">비밀글</a-checkbox>
+				</div>
+				<a-textarea v-model="comment" name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }"></a-textarea>
+				<a-button type="primary" html-type="submit" @click.prevent="addComment('[##_rp_onclick_submit_##]')" ref="addCmtBtn">등록</a-button>
+			</div>
+		</form>
+		<div class="commentList">
+			<ol>
+				<li id="comment13202358">
+					<div class="rp_admin">
+						<div class="header">
+							<span class="name">
+								<a href="https://stackoverflow.tistory.com" onclick="return openLinkInNewWindow(this)">나나@skin</a>
+								<span class="tistoryProfileLayerTrigger"></span>
+							</span>
+							<span class="date"> 2019.09.03 01:19</span>
+							<span class="spacer"></span>
+							<a href="#" onclick="deleteComment(13202358);return false" class="modify">수정/삭제</a>
+							<a href="#" onclick="commentComment(13202358); return false" class="write">댓글쓰기</a>
+						</div>
+						<p class="content">댓글 테스트</p>
+					</div>
+				</li>
+				<li id="comment13205214">
+					<div class="rp_admin">
+						<div class="header">
+							<span class="name">
+								<a href="https://stackoverflow.tistory.com" onclick="return openLinkInNewWindow(this)">나나@skin</a>
+								<span class="tistoryProfileLayerTrigger"></span>
+							</span>
+							<span class="date"> 2019.09.09 23:53</span>
+							<span class="spacer"></span>
+							<a href="#" onclick="deleteComment(13205214);return false" class="modify">수정/삭제</a>
+							<a href="#" onclick="commentComment(13205214); return false" class="write">댓글쓰기</a>
+						</div>
+						<p class="content">ddddd</p>
+					</div>
+					<ul>
+						<li id="comment13205958">
+							<div class="rp_admin">
+								<div class="header">
+									<span class="name">
+										<a href="https://stackoverflow.tistory.com" onclick="return openLinkInNewWindow(this)">나나@skin</a>
+										<span class="tistoryProfileLayerTrigger"></span>
+									</span>
+									<span class="date"> 2019.09.10 19:06</span>
+									<span class="spacer"></span>
+									<a href="#" onclick="deleteComment(13205958); return false;" class="modify">수정/삭제</a>
+								</div>
+								<p class="content">대댓글 하이요</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li id="comment13206178">
+					<div class="rp_general">
+						<div class="header">
+							<span class="name">
+								<a href="https://solution-release.tistory.com" onclick="return openLinkInNewWindow(this)">솔루션배포</a>
+							</span>
+							<span class="date">
+								2019.09.10 21:51
+								<a href="/toolbar/popup/abuseReport/?entryId=3&amp;commentId=13206178">신고</a>
+							</span>
+							<span class="spacer"></span>
+							<a href="#" onclick="deleteComment(13206178);return false" class="modify">수정/삭제</a>
+							<a href="#" onclick="commentComment(13206178); return false" class="write">댓글쓰기</a>
+						</div>
+						<p class="content">댓글을 다는 연습을 합니다</p>
+					</div>
+				</li>
+				<li id="comment13206187">
+					<div class="rp_general">
+						<div class="header">
+							<span class="name">게스트</span>
+							<span class="date">
+								2019.09.10 21:58
+								<a href="/toolbar/popup/abuseReport/?entryId=3&amp;commentId=13206187">신고</a>
+							</span>
+							<span class="spacer"></span>
+							<a href="#" onclick="deleteComment(13206187);return false" class="modify">수정/삭제</a>
+							<a href="#" onclick="commentComment(13206187); return false" class="write">댓글쓰기</a>
+						</div>
+						<p class="content">안녕하세요</p>
+					</div>
+					<ul>
+						<li id="comment13205958" v-for="n in 2">
+							<div class="rp_admin">
+								<div class="header">
+									<span class="name">
+										<a href="https://stackoverflow.tistory.com" onclick="return openLinkInNewWindow(this)">나나@skin</a>
+										<span class="tistoryProfileLayerTrigger"></span>
+									</span>
+									<span class="date"> 2019.09.10 19:06</span>
+									<span class="spacer"></span>
+									<a href="#" onclick="deleteComment(13205958); return false;" class="modify">수정/삭제</a>
+								</div>
+								<p class="content">대댓글 하이요</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li id="comment13206188">
+					<div class="rp_secret">
+						<div class="header">
+							<span class="name">
+								<a href="https://solution-release.tistory.com" onclick="return openLinkInNewWindow(this)">솔루션배포</a>
+							</span>
+							<span class="date">
+								2019.09.10 21:58
+								<a href="/toolbar/popup/abuseReport/?entryId=3&amp;commentId=13206188">신고</a>
+							</span>
+							<span class="spacer"></span>
+							<a href="#" onclick="deleteComment(13206188);return false" class="modify">수정/삭제</a>
+							<a href="#" onclick="commentComment(13206188); return false" class="write">댓글쓰기</a>
+						</div>
+						<p class="content">비밀글 [비밀댓글]</p>
+					</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+	<% } %>
 </div>

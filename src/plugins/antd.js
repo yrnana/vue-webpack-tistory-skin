@@ -14,7 +14,7 @@ import {
 	// Collapse,
 	// Carousel,
 	// Cascader,
-	// Checkbox,
+	Checkbox,
 	Col,
 	// DatePicker,
 	Divider,
@@ -54,7 +54,7 @@ import {
 	// Upload,
 	// Drawer,
 	// Skeleton,
-	Comment,
+	// Comment,
 	// ConfigProvider,
 	// Base,
 } from 'ant-design-vue'
@@ -82,7 +82,7 @@ Vue.use(Card)
 // Vue.use(Collapse)
 // Vue.use(Carousel)
 // Vue.use(Cascader)
-// Vue.use(Checkbox)
+Vue.use(Checkbox)
 Vue.use(Col)
 // Vue.use(DatePicker)
 Vue.use(Divider)
@@ -120,5 +120,5 @@ Vue.use(Tag)
 // Vue.use(Tooltip)
 // Vue.use(Upload)
 // Vue.use(Skeleton)
-Vue.use(Comment)
+// Vue.use(Comment)
 // Vue.use(ConfigProvider)
