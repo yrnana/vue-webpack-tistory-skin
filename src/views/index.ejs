@@ -12,7 +12,22 @@
 					<%- include src/views/body/drawer.ejs %>
 				</aside>
 
+				<!-- 사이드바 버튼 -->
+				<button
+					class="hamburger hamburger--slider"
+					:class="{ 'is-active': open }"
+					aria-label="Menu"
+					aria-controls="drawer"
+					@click="toggleOpen"
+				>
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+
 				<main id="main">
+					<div class="hover"></div>
+
 					<!-- 본문 -->
 					<section id="content">
 						<%- include src/views/body/content.ejs %>

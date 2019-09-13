@@ -2,6 +2,10 @@
 	#drawer {
 		left: 0 !important;
 	}
+	.hover,
+	.hamburger {
+		display: none !important;
+	}
 	#main {
 		-webkit-transform: translateX(0) !important;
 		-moz-transform: translateX(0) !important;

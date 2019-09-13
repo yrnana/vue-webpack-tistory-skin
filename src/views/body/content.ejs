@@ -1,10 +1,13 @@
 <% if (isProd) { %>
 <!-- 홈 커버 -->
 <%- include ./content/cover.ejs %>
+
 <!-- 리스트 (카테고리, 검색, 태그) -->
-<%- include ./content/list.ejs %>
+<%- include ./content/list.ejs %><% } %>
+
 <!-- 글 -->
-<%- include ./content/article.ejs %>
+<%- include ./content/article.ejs %><% if (isProd) { %>
+
 <!-- 보호글 -->
 <%- include ./content/protected.ejs %>
 
@@ -15,9 +18,10 @@
 <%- include ./content/notice.ejs %>
 
 <!-- 태그로그 -->
-<%- include ./content/taglog.ejs %><% } %>
+<%- include ./content/taglog.ejs %>
 
 <!-- 방명록 -->
-<%- include ./content/guestbook.ejs %>
+<%- include ./content/guestbook.ejs %> <% } %>
+
 <!-- 페이징 -->
 <%- include ./content/paging.ejs %>

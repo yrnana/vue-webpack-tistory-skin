@@ -23,12 +23,12 @@
 			font-weight: 700;
 		}
 		a[rel='tag'] {
-			font-size: 12px;
+			font-size: 14px;
+			line-height: 22px;
+			height: 24px;
 			color: #1890ff;
 			background: #e6f7ff;
 			display: inline-block;
-			line-height: 20px;
-			height: 22px;
 			padding: 0 7px;
 			border-radius: 4px;
 			border: 1px solid #91d5ff;
@@ -86,6 +86,12 @@
 			border-radius: 5px;
 		}
 	}
+	.ant-row-flex {
+		margin: -4px;
+		& > div {
+			padding: 4px;
+		}
+	}
 }
 
 // 댓글, 방명록
@@ -103,24 +109,29 @@
 		}
 		.custom-checkbox {
 			margin-left: auto;
+			position: relative;
 			input[type='checkbox'] {
 				position: absolute;
 				opacity: 0;
 				z-index: -1;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
 				& + label {
 					position: relative;
-					display: inline-block;
-					padding: 0 0 0 1.8em;
-					height: 1.5em;
-					line-height: 1.5;
+					display: block;
+					padding: 0 0 0 1.5em;
+					height: 16px;
+					line-height: 16px;
 					cursor: pointer;
 					&:before {
 						position: absolute;
-						top: 0.15em;
+						top: 0;
 						left: 0;
 						display: block;
-						width: 1.2em;
-						height: 1.2em;
+						width: 16px;
+						height: 16px;
 						content: ' ';
 						border: 1px solid #bdc3c7;
 						border-radius: 20%;
@@ -133,11 +144,10 @@
 						top: 0;
 						left: 0;
 						display: block;
-						width: 1.2em;
-						height: 1.2em;
-						content: '\2714';
+						width: 16px;
+						height: 16px;
+						content: '\f00c';
 						color: #ffffff;
-						line-height: 1.5;
 						text-align: center;
 						-webkit-transform: scale(0);
 						-ms-transform: scale(0);
@@ -146,6 +156,13 @@
 						-webkit-transition: 0.25s all ease;
 						-o-transition: 0.25s all ease;
 						transition: 0.25s all ease;
+						font-size: 10px;
+						font-family: 'Font Awesome 5 Free';
+						font-weight: 900;
+						font-variant: normal;
+						font-style: normal;
+						text-rendering: auto;
+						-webkit-font-smoothing: antialiased;
 					}
 				}
 				&:checked + label {
@@ -263,7 +280,6 @@
 .guestbook {
 	h2 {
 		font-size: 1.5rem;
-		font-weight: 700;
 		margin-bottom: $spacing;
 	}
 }
@@ -284,5 +300,19 @@
 	margin-bottom: 0;
 	.container_postbtn {
 		margin-bottom: 0;
+	}
+}
+
+// 글 속성
+.article-content {
+	blockquote {
+		margin: 1em 0;
+		&[data-ke-style='normal'] {
+			border-left: 8px solid #eee;
+			padding: 20px 24px;
+		}
+	}
+	pre {
+		tab-size: 4;
 	}
 }

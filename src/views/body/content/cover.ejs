@@ -41,26 +41,30 @@
 		<s_cover name="thumbnail-list">
 			<div class="thumbnail-list">
 				<h3>[##_cover_title_##]</h3>
-				<div class="row">
-					<% if (isProd) { %>
+				<% if (isProd) { %>
+				<a-row :gutter="16" type="flex">
 					<s_cover_item>
-						<a href="[##_cover_item_url_##]" class="col-xs col-sm col-md col-lg col-xl">
-							<a-card hoverable>
-								<s_cover_item_thumbnail>
-									<img slot="cover" src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_cover_item_thumbnail_##]" />
-								</s_cover_item_thumbnail>
-								<a-card-meta title="[##_cover_item_title_##]">
-									<s_cover_item_article_info>
-										<template slot="description">
-											[##_cover_item_category_##] · [##_cover_item_simple_date_##]
-										</template>
-									</s_cover_item_article_info>
-								</a-card-meta>
-							</a-card>
-						</a>
+						<a-col :xs="24" :sm="12" :md="8" :lg="12" :xl="8">
+							<a href="[##_cover_item_url_##]">
+								<a-card hoverable>
+									<s_cover_item_thumbnail>
+										<img slot="cover" src="//i1.daumcdn.net/thumb/C264x200/?fname=[##_cover_item_thumbnail_##]" />
+									</s_cover_item_thumbnail>
+									<a-card-meta title="[##_cover_item_title_##]">
+										<s_cover_item_article_info>
+											<template slot="description">
+												[##_cover_item_category_##] · [##_cover_item_simple_date_##]
+											</template>
+										</s_cover_item_article_info>
+									</a-card-meta>
+								</a-card>
+							</a>
+						</a-col>
 					</s_cover_item>
-					<% } else { %>
-					<a href="#" v-for="n in 3" class="col-xs col-sm col-md col-lg col-xl">
+				</a-row>
+				<% } else { %>
+				<a-row :gutter="16" type="flex">
+					<a-col v-for="n in 4" :xs="24" :sm="12" :md="8" :lg="12" :xl="8">
 						<a-card hoverable>
 							<img
 								v-if="n % 3 === 1"
@@ -73,9 +77,9 @@
 								</template>
 							</a-card-meta>
 						</a-card>
-					</a>
-					<% } %>
-				</div>
+					</a-col>
+				</a-row>
+				<% } %>
 			</div>
 		</s_cover>
 	</s_cover_rep>

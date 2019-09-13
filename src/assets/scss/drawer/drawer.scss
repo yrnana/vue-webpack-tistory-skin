@@ -19,15 +19,14 @@
 		margin-bottom: $spacing * 2;
 		h1 {
 			margin-bottom: 0;
-			font-size: 2rem;
+			font-size: 1.8rem;
 			font-weight: 700;
 			a {
 				color: $head-text-color;
 			}
 		}
 		.blogDesc {
-			font-size: 1rem;
-			color: #666;
+			color: #999;
 		}
 	}
 
@@ -51,7 +50,7 @@
 	.sidebarElement {
 		margin-bottom: $spacing * 1.5;
 		h3 {
-			font-size: 1.1rem;
+			font-size: 1rem;
 			margin-bottom: 0.4rem;
 		}
 		ul {
@@ -68,12 +67,6 @@
 				&:hover {
 					color: #999;
 				}
-				// img {
-				// 	display: none;
-				// 	&.active {
-				// 		display: inline-block;
-				// 	}
-				// }
 			}
 		}
 	}
