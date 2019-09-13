@@ -1,12 +1,18 @@
 <s_tag>
 	<div class="inner-content taglog">
-		<h3>태그</h3>
-		<ul>
+		<h2>태그 클라우드</h2>
+		<div>
+			<% if (isProd) { %>
 			<s_tag_rep>
-				<li>
-					<a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
-				</li>
+				<a href="[##_tag_link_##]" class="[##_tag_class_##]">
+					<a-tag>[##_tag_name_##]</a-tag>
+				</a>
 			</s_tag_rep>
-		</ul>
+			<% } else { for (var i = 1; i <= 5; i++) { %>
+			<a href="#" class="cloud<%= i %>">
+				<a-tag>테스트<%= i %></a-tag>
+			</a>
+			<% } } %>
+		</div>
 	</div>
 </s_tag>

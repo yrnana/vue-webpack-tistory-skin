@@ -1,0 +1,41 @@
+.taglog {
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: $spacing;
+	}
+	a {
+		display: inline-block;
+	}
+	& > div {
+		margin-bottom: -8px;
+	}
+	.ant-tag {
+		margin-bottom: 8px;
+	}
+	.cloud1 .ant-tag {
+		color: #eb2f96;
+		background: #fff0f6;
+		border-color: #ffadd2;
+	}
+	.cloud2 .ant-tag {
+		color: #fa8c16;
+		background: #fff7e6;
+		border-color: #ffd591;
+	}
+	.cloud3 .ant-tag {
+		color: #52c41a;
+		background: #f6ffed;
+		border-color: #b7eb8f;
+	}
+	.cloud4 .ant-tag {
+		color: #1890ff;
+		background: #e6f7ff;
+		border-color: #91d5ff;
+	}
+	.cloud5 .ant-tag {
+		color: #722ed1;
+		background: #f9f0ff;
+		border-color: #d3adf7;
+	}
+}

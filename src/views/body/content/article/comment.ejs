@@ -3,21 +3,62 @@
 	<s_rp>
 		<s_rp_input_form>
 			<div class="commentWrite">
-				<div class="options">
-					<s_rp_member>
+				<s_rp_member>
+					<div class="options">
 						<s_rp_guest>
-							<a-input v-model="name" name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
-								<a-icon slot="prefix" type="user"></a-icon>
-							</a-input>
-							<a-input v-model="password" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
-								<a-icon slot="prefix" type="lock"></a-icon>
-							</a-input>
+							<span class="ant-input-affix-wrapper">
+								<span class="ant-input-prefix">
+									<i class="anticon anticon-user">
+										<svg
+											viewBox="64 64 896 896"
+											data-icon="user"
+											width="1em"
+											height="1em"
+											fill="currentColor"
+											aria-hidden="true"
+											focusable="false"
+											class=""
+										>
+											<path
+												d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+											></path>
+										</svg>
+									</i>
+								</span>
+								<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" class="ant-input" placeholder="이름" />
+							</span>
+							<span class="ant-input-affix-wrapper">
+								<span class="ant-input-prefix">
+									<i class="anticon anticon-lock">
+										<svg
+											viewBox="64 64 896 896"
+											data-icon="lock"
+											width="1em"
+											height="1em"
+											fill="currentColor"
+											aria-hidden="true"
+											focusable="false"
+											class=""
+										>
+											<path
+												d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+											></path>
+										</svg>
+									</i>
+								</span>
+								<input type="password" name="[##_rp_input_password_##]" class="ant-input" placeholder="비밀번호" maxlength="8" />
+							</span>
 						</s_rp_guest>
-						<a-checkbox v-model="secret" name="[##_rp_input_is_secret_##]">비밀글</a-checkbox>
-					</s_rp_member>
-				</div>
-				<a-textarea v-model="comment" name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }"></a-textarea>
-				<a-button type="primary" html-type="submit" @click.prevent="addComment('[##_rp_onclick_submit_##]')" ref="addCmtBtn">등록</a-button>
+						<div class="custom-checkbox">
+							<input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret" />
+							<label for="secret">비밀글</label>
+						</div>
+					</div>
+				</s_rp_member>
+				<textarea name="[##_rp_input_comment_##]" placeholder="댓글 내용" class="ant-input" rows="3"></textarea>
+				<button type="submit" class="ant-btn ant-btn-primary" onclick="[##_rp_onclick_submit_##]">
+					<span>등록</span>
+				</button>
 			</div>
 		</s_rp_input_form>
 		<s_rp_container>
@@ -63,16 +104,57 @@
 		<form style="margin: 0px;">
 			<div class="commentWrite">
 				<div class="options">
-					<a-input v-model="name" name="[##_rp_input_name_##]" default-value="[##_guest_name_##]" placeholder="이름">
-						<a-icon slot="prefix" type="user"></a-icon>
-					</a-input>
-					<a-input v-model="password" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" maxlength="8">
-						<a-icon slot="prefix" type="lock"></a-icon>
-					</a-input>
-					<a-checkbox v-model="secret" name="[##_rp_input_is_secret_##]">비밀글</a-checkbox>
+					<span class="ant-input-affix-wrapper">
+						<span class="ant-input-prefix">
+							<i class="anticon anticon-user">
+								<svg
+									viewBox="64 64 896 896"
+									data-icon="user"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									aria-hidden="true"
+									focusable="false"
+									class=""
+								>
+									<path
+										d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+									></path>
+								</svg>
+							</i>
+						</span>
+						<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" class="ant-input" placeholder="이름" />
+					</span>
+					<span class="ant-input-affix-wrapper">
+						<span class="ant-input-prefix">
+							<i class="anticon anticon-lock">
+								<svg
+									viewBox="64 64 896 896"
+									data-icon="lock"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									aria-hidden="true"
+									focusable="false"
+									class=""
+								>
+									<path
+										d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z"
+									></path>
+								</svg>
+							</i>
+						</span>
+						<input type="password" name="[##_rp_input_password_##]" class="ant-input" placeholder="비밀번호" maxlength="8" />
+					</span>
+					<div class="custom-checkbox">
+						<input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret" />
+						<label for="secret">비밀글</label>
+					</div>
 				</div>
-				<a-textarea v-model="comment" name="[##_rp_input_comment_##]" placeholder="내용" :autosize="{ minRows: 3, maxRows: 6 }"></a-textarea>
-				<a-button type="primary" html-type="submit" @click.prevent="addComment('[##_rp_onclick_submit_##]')" ref="addCmtBtn">등록</a-button>
+				<textarea name="[##_rp_input_comment_##]" placeholder="댓글 내용" class="ant-input" rows="3"></textarea>
+				<button type="submit" class="ant-btn ant-btn-primary" onclick="[##_rp_onclick_submit_##]">
+					<span>등록</span>
+				</button>
 			</div>
 		</form>
 		<div class="commentList">

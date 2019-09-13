@@ -1,3 +1,4 @@
+// 글
 .article {
 	margin-bottom: $spacing * 2;
 	h2 {
@@ -39,8 +40,13 @@
 			}
 		}
 	}
+	.container_postbtn {
+		margin: $spacing 0 $spacing * 2;
+		padding: 0;
+	}
 }
 
+// 관련글
 .related {
 	margin-bottom: $spacing * 2;
 	h3 {
@@ -82,6 +88,8 @@
 	}
 }
 
+// 댓글, 방명록
+.guestWrite,
 .commentWrite {
 	.options {
 		display: flex;
@@ -93,14 +101,75 @@
 				margin-right: $spacing / 4;
 			}
 		}
-		label {
+		.custom-checkbox {
 			margin-left: auto;
+			input[type='checkbox'] {
+				position: absolute;
+				opacity: 0;
+				z-index: -1;
+				& + label {
+					position: relative;
+					display: inline-block;
+					padding: 0 0 0 1.8em;
+					height: 1.5em;
+					line-height: 1.5;
+					cursor: pointer;
+					&:before {
+						position: absolute;
+						top: 0.15em;
+						left: 0;
+						display: block;
+						width: 1.2em;
+						height: 1.2em;
+						content: ' ';
+						border: 1px solid #bdc3c7;
+						border-radius: 20%;
+						-webkit-transition: 0.25s all ease;
+						-o-transition: 0.25s all ease;
+						transition: 0.25s all ease;
+					}
+					&:after {
+						position: absolute;
+						top: 0;
+						left: 0;
+						display: block;
+						width: 1.2em;
+						height: 1.2em;
+						content: '\2714';
+						color: #ffffff;
+						line-height: 1.5;
+						text-align: center;
+						-webkit-transform: scale(0);
+						-ms-transform: scale(0);
+						-o-transform: scale(0);
+						transform: scale(0);
+						-webkit-transition: 0.25s all ease;
+						-o-transition: 0.25s all ease;
+						transition: 0.25s all ease;
+					}
+				}
+				&:checked + label {
+					&:before {
+						background: $blue;
+						border-color: $blue;
+					}
+					&:after {
+						-webkit-transform: scale(1);
+						-ms-transform: scale(1);
+						-o-transform: scale(1);
+						transform: scale(1);
+					}
+				}
+			}
 		}
 	}
 	textarea {
 		margin-bottom: $spacing / 4 !important;
+		min-height: 71px;
 	}
 }
+
+.guestList,
 .commentList {
 	margin-top: $spacing;
 	ol {
@@ -109,7 +178,7 @@
 		list-style: none;
 		li {
 			padding: $spacing / 2 0;
-			border-bottom: $border;
+			border-bottom: 1px solid #e8e8e8;
 		}
 		ul {
 			margin: 0 0 0 $spacing;
@@ -173,6 +242,7 @@
 	.content {
 		margin-bottom: 0;
 	}
+	.guest_admin,
 	.rp_admin {
 		.name a {
 			color: $blue;
@@ -181,9 +251,38 @@
 			}
 		}
 	}
+	.guest_secret,
 	.rp_secret {
 		.content {
 			color: #91d5ff;
 		}
+	}
+}
+
+// 방명록
+.guestbook {
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: $spacing;
+	}
+}
+
+// 보호글
+.protected {
+	margin-bottom: 0;
+	.article-content {
+		color: #666;
+		margin: $spacing * 2 0 !important;
+		text-align: center;
+	}
+}
+
+// 페이지, 공지사항
+.page,
+.notice {
+	margin-bottom: 0;
+	.container_postbtn {
+		margin-bottom: 0;
 	}
 }
